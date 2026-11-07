@@ -1,0 +1,263 @@
+.wadah {
+  position: relative;
+  isolation: isolate;
+  width: min(100% - 32px, 680px);
+  margin: 0 auto;
+  padding: 58px 0 48px;
+  color: #38264d;
+}
+
+.wadah::before,
+.wadah::after {
+  position: fixed;
+  z-index: -1;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(210, 184, 255, 0.3);
+  content: '';
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.wadah::before {
+  top: 10%;
+  left: -150px;
+}
+
+.wadah::after {
+  right: -155px;
+  bottom: 8%;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 204, 236, 0.35);
+}
+
+.judul {
+  margin: 0;
+  color: #542a88;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+}
+
+.judul::after {
+  display: inline-block;
+  margin-left: 10px;
+  content: '✨';
+  font-size: 0.62em;
+  vertical-align: 0.2em;
+}
+
+.subjudul {
+  margin: 10px 0 28px;
+  color: #837397;
+  font-size: 1rem;
+}
+
+.kartu {
+  margin-bottom: 18px;
+  padding: 24px;
+  border: 1px solid rgba(164, 129, 210, 0.2);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 30px rgba(89, 49, 134, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.wadah > .kartu:first-of-type {
+  border: 0;
+  background: linear-gradient(135deg, #7944b5 0%, #a66be0 100%);
+  box-shadow: 0 16px 32px rgba(114, 64, 171, 0.23);
+  color: #fff;
+}
+
+.kartu h2 {
+  margin: 0 0 16px;
+  color: #542a88;
+  font-size: 1.15rem;
+  font-weight: 750;
+}
+
+.wadah > .kartu:first-of-type h2 {
+  color: #f3e7ff;
+}
+
+.baris {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.input {
+  min-width: 120px;
+  flex: 1 1 145px;
+  padding: 12px 14px;
+  border: 1px solid #e4d8f1;
+  border-radius: 12px;
+  outline: none;
+  background: #fdfbff;
+  color: #38264d;
+  font: inherit;
+  font-size: 0.9rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.input::placeholder {
+  color: #a293b4;
+}
+
+.input:focus {
+  border-color: #9a65cd;
+  box-shadow: 0 0 0 3px rgba(154, 101, 205, 0.15);
+}
+
+.tombol {
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: #7540aa;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.tombol:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #60318f;
+  box-shadow: 0 5px 12px rgba(92, 48, 139, 0.2);
+}
+
+.tombol:focus-visible {
+  outline: 3px solid #d5b5f2;
+  outline-offset: 2px;
+}
+
+.tombol:disabled {
+  background: #c9bdd5;
+  cursor: not-allowed;
+}
+
+.tombol-merah {
+  background: #f2e7fb;
+  color: #7844a7;
+}
+
+.tombol-merah:hover:not(:disabled) {
+  background: #e7d4f7;
+  color: #542a88;
+}
+
+.tombol-kecil {
+  padding: 7px 11px;
+  font-size: 0.78rem;
+}
+
+.daftar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0eaf6;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item .keterangan {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.kosong {
+  margin: 0;
+  padding: 12px 0 4px;
+  color: #9889a8;
+  text-align: center;
+  font-style: italic;
+}
+
+.galat {
+  margin: 8px 0 0;
+  color: #bd3d7b;
+  font-size: 0.85rem;
+}
+
+.saldo {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(1.8rem, 6vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.rincian {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  color: #f3e7ff;
+  font-size: 0.88rem;
+}
+
+.pemasukan,
+.pengeluaran {
+  font-weight: 750;
+}
+
+.rincian .pemasukan {
+  color: #c8ffd9;
+}
+
+.rincian .pengeluaran {
+  color: #ffe0ee;
+}
+
+.item .pemasukan {
+  color: #328653;
+}
+
+.item .pengeluaran,
+.saldo.pengeluaran {
+  color: #c84678;
+}
+
+@media (max-width: 540px) {
+  .wadah {
+    padding-top: 38px;
+  }
+
+  .kartu {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .baris > .input,
+  .baris > .tombol {
+    flex-basis: 100%;
+  }
+
+  .item {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .item .keterangan {
+    flex-basis: calc(100% - 1px);
+  }
+
+  .rincian {
+    gap: 6px 16px;
+  }
+}
